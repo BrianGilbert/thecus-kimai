@@ -1,0 +1,8 @@
+/Binary/kimai/build/
+/Binary/kimai/core/
+!/Binary/kimai/core/installer/steps/50_enter_access_data.php
+!/Binary/kimai/core/installer/steps/60_db_select_mysql.php
+/Binary/kimai/docu/
+/Binary/kimai/test/
+/Binary/kimai/README.md
+/Binary/kimai/.gitignore
