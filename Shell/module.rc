@@ -1,0 +1,44 @@
+#!/bin/sh
+#start up script for module
+
+module_name=$2
+
+
+PATH=/raid/data/module/ModBase1/system/bin:/raid/data/module/PHP53/system/bin:$PATH
+export PATH
+
+
+#Function
+start(){
+  echo "kimai start"
+  /raid/data/module/apache/sys/bin/httpd -f /raid/data/module/Kimai/bin/httpd.conf -k start
+}
+
+
+stop(){
+  echo "kimai stop"
+  /raid/data/module/apache/sys/bin/httpd -f /raid/data/module/Kimai/bin/httpd.conf -k stop
+}
+
+
+case "$1" in
+  boot)
+    start
+    ;;
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  reset-configuration)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $module_name {boot|start|stop|reset-configuration}"
+    exit 1
+    ;;
+esac
+
+exit 0
